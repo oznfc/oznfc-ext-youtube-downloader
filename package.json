@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schema.kunkun.sh",
+  "name": "oznfc-ext-youtube-dowloader",
+  "version": "0.1.6",
+  "license": "MIT",
+  "type": "module",
+  "kunkun": {
+    "name": "YouTube Downloader",
+    "shortDescription": "Download YouTube videos",
+    "longDescription": "Download YouTube videos",
+    "identifier": "oznfc-ext-youtube-dowloader",
+    "permissions": [
+      "fetch:all",
+      "clipboard:read-text",
+      {
+        "permission": "shell:deno:spawn",
+        "allow": [
+          {
+            "path": "$EXTENSION/deno-src/index.ts",
+            "env": "*",
+            "ffi": "*",
+            "read": "*",
+            "write": "*",
+            "sys": "*",
+            "run": "*",
+            "net": "*"
+          }
+        ]
+      },
+      "shell:stdin-write",
+      "shell:kill"
+    ],
+    "demoImages": [],
+    "icon": {
+      "type": "iconify",
+      "value": "logos:youtube-icon"
+    },
+    "customUiCmds": [],
+    "templateUiCmds": [
+      {
+        "name": "Download YouTube Video",
+        "main": "dist/index.js",
+        "cmds": []
+      }
+    ]
+  },
+  "scripts": {
+    "dev": "bun build.ts dev",
+    "build": "bun build.ts"
+  },
+  "dependencies": {
+    "@distube/ytdl-core": "^4.15.9",
+    "@kksh/api": "^0.1.1",
+    "i18next": "^23.15.1",
+    "valibot": "^1.0.0-beta.14"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "./dist",
+    ".gitignore"
+  ]
+}

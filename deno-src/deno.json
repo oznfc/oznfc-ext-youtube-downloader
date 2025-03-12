@@ -1,0 +1,13 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@distube/yt-dlp": "npm:@distube/yt-dlp@^2.0.1",
+    "@distube/ytdl-core": "npm:@distube/ytdl-core@^4.15.9",
+    "@hk/photographer-toolbox": "jsr:@hk/photographer-toolbox@^0.1.12",
+    "@kunkun/api": "jsr:@kunkun/api@^0.0.52",
+    "@std/assert": "jsr:@std/assert@1",
+    "fluent-ffmpeg": "npm:fluent-ffmpeg@^2.1.3"
+  }
+}
